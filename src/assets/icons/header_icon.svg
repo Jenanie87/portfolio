@@ -1,0 +1,14 @@
+<svg width="67" height="30" viewBox="0 0 67 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H12.4069V4.66667H6.0794V25.3333H12.4069V30H0V0Z" fill="black"/>
+
+  <!-- Buchstabe J (Blockschrift und dicker) -->
+  <rect x="20" y="0" width="6" height="22" fill="black"/>
+  <rect x="14" y="22" width="12" height="6" fill="black"/>
+
+  <!-- Buchstabe D (nur Umriss) -->
+  <rect x="29" y="0" width="6" height="30" fill="black"/>
+  <path d="M35 0H42C46 0 50 4 50 15C50 26 46 30 42 30H35V0Z" stroke="black" stroke-width="6" fill="none"/>
+
+<path d="M54.2598 25.3333H60.5873V4.66667H54.2598V0H66.6667V30H54.2598V25.3333Z" fill="black"/>
+</svg>
+

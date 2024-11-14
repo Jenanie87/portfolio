@@ -1,0 +1,97 @@
+@import "../../../styles.scss";
+
+section {
+  @include dFlex();
+  background-color: $background_light;
+  padding-top: 48px;
+  > .references_content {
+    @include dFlex($g: 40px);
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    > .references_headline {
+      cursor: default;
+      &:hover {
+        color: $highlight;
+      }
+    }
+    > p {
+      font-family: "Overpass";
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 26.4px;
+      max-width: 560px;
+      text-align: center;
+    }
+  }
+  &.small_screen .references_content .intro-text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &.small_screen .references_content {
+    padding-bottom: 100px;
+  }
+}
+
+.references {
+  @include dFlex($jc: space-between);
+  width: 100%;
+  .quote {
+    @include dFlex($g: 24px);
+    flex-direction: column;
+    border: 4px solid black;
+    max-width: 397px;
+    padding: 24px 16px;
+    margin: 0px 4px;
+    &:hover {
+      border-color: $highlight;
+      > .comment_person > img {
+        filter: invert(63%) sepia(35%) saturate(6099%) hue-rotate(128deg)
+          brightness(93%) contrast(101%);
+      }
+    }
+  }
+  &.small_screen, &.medium_screen {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.comment_person {
+  @include dFlex($g: 8px);
+  flex-direction: column;
+  > img {
+    width: 40px;
+    height: 40px;
+  }
+  h4 {
+    font-family: "Syne";
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26.4px;
+    text-align: center;
+  }
+  p {
+    font-family: "Overpass";
+    font-size: 14px;
+    line-height: 16.8px;
+    text-align: center;
+  }
+}
+
+.comment {
+  font-family: "Overpass";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+}
+
+a > img {
+  width: 100%;
+}
+
+.wrapper_center {
+  display: flex;
+  justify-content: center;
+}

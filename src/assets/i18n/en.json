@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "scroll_down": "Scroll down"
+  },
+  "burger_menu": {
+    "about_me_link": "About Me",
+    "skills_link": "My skills",
+    "say_hi_heading": "Say Hi!"
+  },
+  "about_me": {
+    "title": "About me",
+    "description1": "I am a Frontend Developer from Kamen, Germany. After my studies in economics and my experiences in accounting, I combine my logical thinking with coding skills. This is how I bring value to each team.",
+    "description2": "If you think I'd be a good match for your projects, contact me!",
+    "location": "Based in Kamen",
+    "remote": "Open to work Remote",
+    "contact_button": "Let's talk"
+  },
+  "skills": {
+    "title": "My skills",
+    "learn_text_prefix": "Don't see the skill you need?",
+    "learn_contact": "Contact me",
+    "learn_text_suffix": "I'm always ready to learn!"
+  },
+  "portfolio": {
+    "description": "Explore a selection of my work here - Interact with <br> projects to see my skills in action.",
+    "project_button_preview": "Try!",
+    "projects": {
+      "join": {
+        "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      },
+      "entventure": {
+        "description": "A simple Jump-and-Run game based on an object-oriented approach. Help the Ent to collect coins and pinecones to fight against the orks."
+      },
+      "pokèdex": {
+        "description": "Based on the PokéApi, a simple library that provides and catalogues Pokemon information."
+      }
+    }
+  },
+  "references": {
+    "title": "References",
+    "intro_text": "I thrive both independently and as part of a team. Here's what my colleagues have to say about working with me",
+    "comments": {
+      "comment_person1_text": "Jennifer's problem-solving ability and attention to detail were key to our success. I highly recommend working with her.",
+      "comment_person2_text": "Jennifer is always willing to help out and tackle any challenge. Her dedication and team spirit made a huge impact on the project.",
+      "comment_person3_text": "Jennifer always gets the job done right. Her reliability and commitment make them an invaluable team member."
+    }
+  },
+  "contact": {
+    "title": "Say Hi!",
+    "project_discussion": "Want to discuss a new project?",
+    "hello_message": "Say hello! Let's discuss your ideas and make it happen",
+    "name_placeholder": "Your name",
+    "name_required": "Your name is required",
+    "email_placeholder": "Your email",
+    "email_required": "Your email is required",
+    "message_placeholder": "Your message",
+    "message_required": "Your message is required",
+    "message_too_short": "Your message is too short",
+    "privacy_policy_start": "I've read the ",
+    "privacy_policy_link_text": "privacy policy",
+    "privacy_policy_end": " and agree to the processing of my data as outlined.",
+    "accept_policy": "Please accept the privacy policy.",
+    "send_button_large": "Send message",
+    "send_button_small": "Say hello ;)",
+    "success_message_start": "Your message has been sent ",
+    "success_message_highlight": "successfully",
+    "success_message_end": "."
+  },
+  "legal_notice": {
+    "title": "Legal Notice",
+    "content_header": "Content according to §5 TMG",
+    "contact_information": "Contact Information",
+    "phone": "Phone: +49 152 28709836",
+    "source_start": "Source: ",
+    "source_link_text": "Impressum-Privatschutz",
+    "source_end": "",
+    "text_available_prefix": "",
+    "text_available": "",
+    "text_available_suffix": ""
+  },
+  "footer": {
+    "legal_notice": "Legal Notice | Privacy Policy"
+  }
+}

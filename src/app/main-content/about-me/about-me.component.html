@@ -1,0 +1,27 @@
+<section id="about_me" class="pad-lr100" appResponsive>
+    <div class="aboutMe_content">
+        <h2 class="aboutMe_headline" appResponsive>{{ 'about_me.title' | translate }}</h2>
+        <div class="personal_information" appResponsive>
+            <div class="personal_text">
+                <p class="text_style" appResponsive>{{ 'about_me.description1' | translate }}</p>
+                <p class="text_style" appResponsive>{{ 'about_me.description2' | translate }}</p>
+                <div class="location_information">
+                    <div class="location">
+                        <img src="../../../assets/icons/house.svg" alt="house icon">
+                        <p class="text_style" appResponsive>{{ 'about_me.location' | translate }}</p>
+                    </div>
+                    <div class="location">
+                        <img src="../../../assets/icons/laptop.svg" alt="laptop icon">
+                        <p class="text_style" appResponsive>{{ 'about_me.remote' | translate }}</p>
+                    </div>
+                </div>
+                <a class="button_flexCenter" href="#contact"><button [@buttonAnimation]="currentState" (mouseover)="toggleAnimation('end')" (mouseout)="toggleAnimation('start')" class="pointer btn">{{ 'about_me.contact_button' | translate }}</button></a>
+            </div>
+            <div class="img_animation" appResponsive>
+                <div class="border_animation">
+                </div>
+                <img src="../../../assets/img/me.jpg" alt="interview picture" appResponsive>
+            </div>
+        </div>
+    </div>
+</section>

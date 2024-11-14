@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "scroll_down": "Scroll runter"
+  },
+  "burger_menu": {
+    "about_me_link": "Über mich",
+    "skills_link": "Meine Skills",
+    "say_hi_heading": "Sag Hi!"
+  },
+  "about_me": {
+    "title": "Über mich",
+    "description1": "Ich bin Frontend Developer aus Kamen, Deutschland. Nach meinem Studium der Wirtschaftswissenschaften und meiner Erfahrung in der Buchhaltung kombiniere ich analytisches Vorgehen und Genauigkeit mit Programmierfähigkeiten. Dadurch leiste ich einen wertvoellen Beitrag in jedem Team.",
+    "description2": "Wenn du denkst, dass ich gut zu deinen Projekten passe, schreib mir!",
+    "location": "Aus Kamen",
+    "remote": "Offen für Remote",
+    "contact_button": "Schreib mir"
+  },
+  "skills": {
+    "title": "Meine Skills",
+    "learn_text_prefix": "Fehlt dir ein Skill?",
+    "learn_contact": "Schreib mir",
+    "learn_text_suffix": "Ich bin immer bereit, dazuzulernen!"
+  },
+  "portfolio": {
+    "description": "Entdecke hier eine Auswahl meiner Projekte - Interagiere mit <br> diesen, um meine Fähigkeiten in Aktion zu sehen.",
+    "project_button_preview": "Los!",
+    "projects": {
+      "join": {
+        "description": "Ein Kanban Board für die Aufgabensteuerung im Team. BenutzerInnen können zugewiesen werden, Aufgaben kategorisiert und in die passenden Spalten verschoben werden."
+      },
+      "entventure": {
+        "description": "Hilf den Ents die Orks zu besiegen. Ein einfaches Jump-and-Run Spiel, welches objektorientiert umgesetzt wurde."
+      },
+      "pokèdex": {
+        "description": "Jeder wollte doch ein Poké-Trainer sein. Hier kann jedes Pokémon im Detail betrachtet werden. Die Informationen werden über die Poké-Api bereitgestellt."
+      }
+    }
+  },
+  "references": {
+    "title": "Referenzen",
+    "intro_text": "Ich arbeite sowohl selbstständig als auch im Team sehr gut. Hier sind ein paar Rückmeldungen von meinen Kollegen zur Zusammenarbeit mit mir.",
+    "comments": {
+      "comment_person1_text": "Jennifers Fähigkeit, Probleme zu lösen, und ihre Liebe zum Detail waren entscheidend für unseren Erfolg. Ich kann die Zusammenarbeit mit ihr nur wärmstens empfehlen.",
+      "comment_person2_text": "Jennifer ist immer bereit zu helfen und jede Herausforderung anzunehmen. Ihre Hingabe und ihr Teamgeist haben einen großen Einfluss auf das Projekt gehabt.",
+      "comment_person3_text": "Jennifer erledigt ihre Aufgaben immer zuverlässig und präzise. Ihr Engagement und ihre Verlässlichkeit machen sie zu einem unverzichtbaren Teammitglied."
+    }
+  },
+  "contact": {
+    "title": "Sag Hi!",
+    "project_discussion": "Lust auf ein neues Projekt?",
+    "hello_message": "Melde dich! Wir bringen deine Ideen zum Leben",
+    "name_placeholder": "Dein Name",
+    "name_required": "Dein Name ist erforderlich",
+    "email_placeholder": "Deine eMail",
+    "email_required": "Deine eMail ist erforderlich",
+    "message_placeholder": "Deine Nachricht",
+    "message_required": "Deine Nachricht ist erforderlich",
+    "message_too_short": "Deine Nachricht ist zu kurz",
+    "privacy_policy_start": "Ich habe die ",
+    "privacy_policy_link_text": "Datenschutzrichtlinie",
+    "privacy_policy_end": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "accept_policy": "Bitte akzeptiere die Datenschutzrichtlinie.",
+    "send_button_large": "Absenden",
+    "send_button_small": "Sag Hallo ;)",
+    "success_message_start": "Deine Nachricht wurde ",
+    "success_message_highlight": "erfolgreich",
+    "success_message_end": " gesendet."
+  },
+  "legal_notice": {
+    "title": "Impressum",
+    "content_header": "Angaben gemäß §5 DDG",
+    "contact_information": "Kontaktinformationen",
+    "phone": "Tel: +49 152 28709836",
+    "source_start": "Quelle: ",
+    "source_link_text": "Impressum-Privatschutz",
+    "source_end": "",
+    "text_available_prefix": "Kleiner Hinweis: Die Datenschutzerklärung gibt’s ",
+    "text_available": "nur",
+    "text_available_suffix": " auf Englisch."
+  },
+  "footer": {
+    "legal_notice": "Impressum | Datenschutzerklärung"
+  }
+}

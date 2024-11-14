@@ -1,0 +1,32 @@
+<footer class="pad-lr100" appResponsive>
+    @if(isSmallScreen) {
+        <div class="footer_content_small">
+            <div class="links">
+                <a href="https://github.com/Jenanie87" target="_blank"><img src="../../../assets/icons/4. Github button s3.svg" class="pointer" alt="github icon"></a>
+                <a href="mailto:hello@jenniferdahm.com" target="_blank"><img src="../../../assets/icons/mail.svg" class="pointer" alt="mail icon"></a>
+                <a href="https://linkedin.com/in/jennifer-dahm-b0028a1b6/" target="_blank"><img src="../../../assets/icons/linkedIn.svg" class="pointer" alt="linkedIn icon"></a> 
+            </div>
+            <a class="pointer" href="#hero"><img src="../../../assets/icons/header_icon.svg" alt="header icon"></a>
+            <p>hello&#64;jenniferdahm.com</p>
+            <a href="legalNotice">{{ 'footer.legal_notice' | translate }}</a>
+        </div>     
+    } @else {
+        <div class="footer_content">
+            <div class="left_part">
+                <a class="pointer" href="#hero"><img src="../../../assets/icons/header_icon.svg" alt="header icon"></a>
+                    <p>© Jennifer Dahm 2024</p>
+            </div>
+            <div class="right_part">
+                <div class="links">
+                    <a href="https://github.com/Jenanie87" class="icon_bounce" target="_blank"><img src="../../../assets/icons/4. Github button s3.svg" class="pointer" alt="github icon"></a>
+                    <a href="mailto:hello@jenniferdahm.com" class="icon_bounce" target="_blank"><img src="../../../assets/icons/mail.svg" class="pointer" alt="mail icon"></a>
+                    <a href="https://linkedin.com/in/jennifer-dahm-b0028a1b6/" class="icon_bounce" target="_blank"><img src="../../../assets/icons/linkedIn.svg" class="pointer" alt="linkedIn icon"></a> 
+                </div>
+                <span class="pointer">
+                    <a href="legalNotice">{{ 'footer.legal_notice' | translate }}</a>
+                    <div class="horizontal_line"></div>
+                </span>
+            </div>
+        </div>
+    }
+</footer>

@@ -1,0 +1,269 @@
+@import "../../../styles.scss";
+
+section {
+  margin-top: -100px;
+  background-color: black;
+  padding: 50px;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+  color: white;
+  text-align: center;
+  @include dFlex();
+  > .contact_content {
+    padding-top: 100px;
+    max-width: 1440px;
+    width: 100%;
+    @include dFlex($g: 48px);
+    flex-direction: column;
+    position: relative;
+    > .wrapper_arrow {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 53px;
+      height: 76px;
+      background-image: url("../../../assets/icons/contact/arrow_first.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 300ms ease-out;
+      &:hover {
+        background-image: url("../../../assets/icons/contact/arrow_second.svg");
+      }
+    }
+    > .contact_headline {
+      align-self: baseline;
+      cursor: default;
+      &:hover {
+        color: $highlight;
+      }
+    }
+    > .lower_part {
+      @include dFlex($g: 10px);
+      flex-direction: column;
+    }
+  }
+  &.small_screen {
+    padding: 0px;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  }
+  &.small_screen .contact_content .wrapper_arrow {
+    display: none;
+  }
+}
+
+h3 {
+  font-family: "Overpass";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+  text-align: center;
+  color: $highlight;
+}
+
+h4 {
+  font-family: "Overpass";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.4px;
+  text-align: center;
+  &.small_screen {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.contact_form {
+  @include dFlex($g: 10px);
+  flex-direction: column;
+  width: 100%;
+}
+
+.input_container {
+  width: 100%;
+  position: relative;
+  > input,
+  textarea {
+    width: 100%;
+    font-family: "Overpass";
+    font-size: 16px;
+    line-height: 19.2px;
+    text-align: left;
+    color: $background_light;
+    padding: 15px 25px;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid $background_light;
+    outline: 4px solid transparent;
+    outline-offset: -2px;
+    background-repeat: no-repeat;
+    background-position: center right 25px;
+    background-size: 25px;
+    &:hover {
+      border-bottom: 2px solid transparent;
+      outline-color: $background_light;
+      cursor: pointer;
+    }
+    &:focus {
+      outline: 2px solid $background_light;
+      background-color: black;
+    }
+    &:focus + .placeholder_text,
+    &:not(:placeholder-shown) + .placeholder_text {
+      top: 0;
+      color: $background_light;
+    }
+  }
+  > .placeholder_text {
+    position: absolute;
+    left: 25px;
+    transform: translateY(-50%);
+    font-family: "Overpass";
+    font-size: 16px;
+    color: $background_light;
+    transition: all 0.3s ease;
+    background-color: black;
+    pointer-events: none;
+  }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px black inset !important; 
+  -webkit-text-fill-color: $background_light !important; 
+  font-family: "Overpass";
+  border-bottom: 2px solid $background_light !important;
+  -webkit-background-clip: text; 
+  font-size: 16px;
+}
+
+.startPosition_input {
+  top: 45%;
+}
+
+.startPosition_area {
+  top: 15%;
+}
+
+.lowerPart_contactForm {
+  @include dFlex($g: 8px, $ai: baseline);
+  flex-direction: column;
+  width: 100%;
+  > .btn_contact {
+    font-family: "Overpass";
+    font-size: 23px;
+    line-height: 27.6px;
+    align-self: center;
+  }
+  &.small_screen .checked_pp {
+    @include dFlex($ai: center, $g: 8px);
+  }
+}
+
+.btn-enabled {
+  background-color: $highlight;
+  padding: 20px 60px 20px 60px;
+  border: 4px solid $highlight;
+  opacity: 1;
+  color: white;
+}
+
+.btn-disabled {
+  background-color: black;
+  padding: 20px 60px 20px 60px;
+  border: 4px solid #bbbbbb;
+  opacity: 0.5;
+  color: #bbbbbb;
+  cursor: not-allowed;
+}
+
+.img_field {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../assets/icons/contact/default.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  flex-grow: 0;
+  &.checked {
+    background-image: url("../../../assets/icons/contact/checked.svg");
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: transparent; 
+}
+
+.checked_pp {
+  @include dFlex($ai: flex-end, $g: 4px);
+  > p {
+    font-family: "Overpass";
+    font-size: 14px;
+    line-height: 16.8px;
+    text-align: left;
+
+    > a {
+      color: $highlight;
+      transition: -webkit-text-stroke 100ms ease-out;
+      -webkit-text-stroke: 0px transparent;
+    }
+  }
+  &:hover p > a {
+    -webkit-text-stroke: 1.5px $highlight;
+  }
+  &:hover .img_field {
+    background-image: url("../../../assets/icons/contact/hover.svg");
+  }
+  &:hover .checked {
+    background-image: url("../../../assets/icons/contact/checked_hover.svg");
+  }
+}
+
+.error_text {
+  margin-top: 10px;
+  min-height: 20px;
+  text-align: left;
+  > span {
+    font-family: "Overpass";
+    color: #e61c40;
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+}
+
+#contact {
+  scroll-behavior: smooth !important;
+}
+
+.input-error {
+  background-image: url(../../../assets/icons/contact/error.svg);
+}
+
+.input-success {
+  background-image: url(../../../assets/icons/contact/done.svg);
+}
+
+
+  .dialog_message {
+    position: absolute;
+    background-color: $background_light;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 1;
+    transform: translateY(640%);
+    opacity: 0;
+    transition: all 300ms ease-out;
+    > p {
+      font-family: "Overpass";
+      color: black;
+      font-size: 23px;
+      line-height: 27.6px;
+      > span {
+        color: $highlight
+      }
+    }
+}
+
+.show_dialog_message {
+  transform: translateY(0px);
+  opacity: 1;
+}

@@ -1,0 +1,41 @@
+<section class="pad-lr100" appResponsive>
+    <div class="references_content">
+        <h2 class="references_headline" appResponsive>{{ 'references.title' | translate }}</h2>
+        <p class="intro-text">{{ 'references.intro_text' | translate }}</p>
+        <div class="references" appResponsive>
+            <div class="quote">
+                <div class="comment_person">
+                    <img src="../../../assets/icons/references/format_quote.svg" alt="format quote">
+                    <h4>S. Miller</h4>
+                    <p>Team Partner</p>
+                </div>
+                <p class="comment">{{ 'references.comments.comment_person1_text' | translate }}</p>
+            </div>
+            <div class="quote">
+                <div class="comment_person">
+                    <img src="../../../assets/icons/references/format_quote.svg" alt="format quote">
+                    <h4>D. Thompson</h4>
+                    <p>Team Partner</p>
+                </div>
+                <p class="comment">{{ 'references.comments.comment_person2_text' | translate }}</p>
+            </div>
+            <div class="quote">
+                <div class="comment_person">
+                    <img src="../../../assets/icons/references/format_quote.svg" alt="format quote">
+                    <h4>E. Roberts</h4>
+                    <p>Team Partner</p>
+                </div>
+                <p class="comment">{{ 'references.comments.comment_person3_text' | translate }}</p>
+            </div>
+        </div>
+        <a (mouseover)="startImageRotation()" (click)="scrollToContact($event)" href="#contact">
+            @if(isSmallScreen) {
+                <div class="wrapper_center">
+                    <img class="pointer" [src]="currentImage" alt="arrow left">
+                </div>
+            } @else {
+                <img class="pointer" [src]="currentImage" alt="arrow left">
+            }
+        </a>   
+    </div>
+</section>

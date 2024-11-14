@@ -1,0 +1,144 @@
+@import "../../../styles.scss";
+
+section {
+  @include dFlex();
+  background-color: $background_light;
+
+  > .skills_content {
+    max-width: 1440px;
+    width: 100%;
+    > a > img {
+      width: 100%;
+    }
+  }
+}
+
+.skills {
+  border: 4px solid #000000;
+  margin-top: 20px;
+  padding: 120px 114px;
+  position: relative;
+  @include dFlex($g: 78px);
+  flex-direction: column;
+  > .skill_learn {
+    @include dFlex($g: 10px);
+    > img {
+      width: 75px;
+      height: 75px;
+    }
+    > p {
+      font-family: "Overpass";
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 26.4px;
+      display: flex;
+      white-space: nowrap;
+      &.small_screen {
+        flex-direction: column;
+        font-size: 20px;
+        line-height: 20px;
+      }
+      &.xsmall_screen {
+        text-align: center;
+      }
+      > span {
+        padding: 0px 10px;
+        > a {
+          color: $highlight;
+          transition: -webkit-text-stroke 100ms ease-out;
+          -webkit-text-stroke: 0px transparent;
+          &:hover {
+            -webkit-text-stroke: 1.5px $highlight;
+          }
+        }
+        > .horizontal_line {
+          width: 55.5px;
+          height: 2px;
+          background-color: $highlight;
+          opacity: 0;
+          transform: translateX(0%);
+          transition: transform 100ms ease-out;
+        }
+        &:hover .horizontal_line {
+          opacity: 1;
+          transform: translateX(105%);
+        }
+      }
+      &.small_screen span {
+        padding: 0px;
+      }
+    }
+    &.small_screen {
+      @include dFlex($g: 8px);
+    }
+    &.small_screen img {
+      width: 60px;
+      height: 60px;
+    }
+    &.xsmall_screen {
+      flex-direction: column;
+    }
+  }
+  &.xsmall_screen {
+    padding: 63px 16px;
+  }
+}
+
+.skills_container {
+  @include dFlex($ai: baseline, $jc: center, $g: 128px);
+  max-width: 1084px;
+  flex-wrap: wrap;
+  > .skill_wrapper {
+    @include dFlex($g: 10px);
+    flex-direction: column;
+    &:hover {
+      color: $highlight;
+    }
+    > img {
+      width: 70px;
+      height: 75px;
+      clip-path: inset(0 0 0 0);
+    }
+    > p {
+      font-family: Overpass;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19.2px;
+      text-align: center;
+      width: 75px;
+    }
+  }
+  &.small_screen .skill_wrapper img {
+    width: 60px;
+    height: 60px;
+  }
+  &.xsmall_screen {
+    gap: 25px;
+    justify-content: space-around;
+  }
+  &.large_screen {
+    justify-content: space-between;
+  }
+}
+
+.skills_headline {
+  position: absolute;
+  top: -43px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $background_light;
+  text-align: center;
+  white-space: nowrap;
+  cursor: default;
+  &:hover {
+    color: $highlight;
+  }
+  &.xsmall_screen {
+    top: -24px;
+  }
+}
+
+.wrapper_center {
+  display: flex;
+  justify-content: center;
+}

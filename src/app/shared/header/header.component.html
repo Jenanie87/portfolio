@@ -1,0 +1,34 @@
+<header class="pad-lr100" appResponsive>
+    <div class="header_content">
+        <a class="pointer" href="#hero"><img src="../../../assets/icons/header_icon.svg" alt="header icon"></a>
+        <div class="right_part" appResponsive>
+            <div class="translate_buttons" >
+                <button class="english_btn choice_btn" [ngClass]="{'active_btn': currentLang === 'en', 'passive_btn': currentLang !== 'en'}" (click)="useLanguage('en')">
+                    <div class="button_text">
+                        @if(isXSmallScreen) {
+                            <p class="text_button">EN</p>
+                        } @else {
+                            <p class="text_button">English</p>
+                        }
+                    </div>
+                </button>
+                <button class="german_btn choice_btn" [ngClass]="{'active_btn': currentLang === 'de', 'passive_btn': currentLang !== 'de'}" (click)="useLanguage('de')">
+                    <div class="button_text">
+                        @if(isXSmallScreen) {
+                            <p class="text_button">GE</p>                          
+                        } @else {
+                            <p class="text_button">German</p>
+                        }
+                    </div>
+                </button>
+            </div>
+            <img (click)="toggleBurgerMenu()" src="{{ currentImage }}" class="pointer" alt="burger menu">
+        </div>
+
+    </div>
+    <div class="overlay" [class.d_none]="classD_none">
+        <app-burger-menu [animationState]="navAnimationState" [bottomState]="bottomState" [backgroundState]="backgroundState" (toggleMenu)="toggleBurgerMenu()" class="burger_menu" appResponsive></app-burger-menu>
+    </div>
+</header>
+
+

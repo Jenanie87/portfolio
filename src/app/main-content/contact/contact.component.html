@@ -1,0 +1,72 @@
+<section id="contact" class="pad-lr100" appResponsive>
+    <div class="contact_content">
+        <a class="wrapper_arrow pointer" href="#hero">
+
+        </a>
+
+        <h2 class="contact_headline" appResponsive>{{ 'contact.title' | translate }}</h2>
+        <div class="lower_part">
+            <h3>{{ 'contact.project_discussion' | translate }}</h3>
+            <h4 appResponsive>{{ 'contact.hello_message' | translate }}</h4>     
+                <form class="contact_form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <div class="input_container">
+                        <input #fullName="ngModel" [(ngModel)]="contactData.name" minlength="3" id="fullName" name="fullName" type="text" placeholder="Your name" required
+                        (input)="fullName.valid ? fullName.control.markAsTouched() : null"
+                        [ngClass]="{'input-error': !fullName.valid && fullName.touched, 'input-success': fullName.valid && fullName.touched}">
+                        <label for="fullName" class="placeholder_text startPosition_input">{{ 'contact.name_placeholder' | translate }}</label>
+                        <div class="error_text">@if(!fullName.valid && fullName.touched) {
+                            <span>{{ 'contact.name_required' | translate }}</span>}
+                        </div>
+                    </div>
+                    <div class="input_container">
+                        <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" type="text" placeholder="Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        (input)="email.valid ? email.control.markAsTouched() : null"
+                        [ngClass]="{'input-error': !email.valid && email.touched, 'input-success': email.valid && email.touched}">
+                        <label for="email" class="placeholder_text startPosition_input">{{ 'contact.email_placeholder' | translate }}</label>
+                        <div class="error_text">@if(!email.valid && email.touched) {
+                            <span>{{ 'contact.email_required' | translate }}</span>}
+                        </div>
+                    </div>
+                    <div class="input_container">
+                        <textarea #message="ngModel" [(ngModel)]="contactData.message" minlength="10" name="message" id="message"  placeholder="Your message" cols="0" rows="9" required
+                        (input)="message.valid ? message.control.markAsTouched() : null"
+                        [ngClass]="{'input-error': !message.valid && message.touched, 'input-success': message.valid && message.touched}"></textarea>
+                        <label for="message" class="placeholder_text startPosition_area">{{ 'contact.message_placeholder' | translate }}</label>
+                        <div class="error_text">@if(message.errors?.['required'] && message.touched) {
+                            <span>{{ 'contact.message_required' | translate }}</span>} @else if (message.errors?.['minlength'] && message.touched && !message.errors?.['required']) {
+                                <span>{{ 'contact.message_too_short' | translate }}</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="lowerPart_contactForm" appResponsive>
+                        <div class="checked_pp">
+                            <div [ngClass]="{'checked': isChecked}" class="img_field pointer" (click)="toggleChecked()">
+                            </div>
+                            <p>
+                                {{ 'contact.privacy_policy_start' | translate }}
+                                <a href="legalNotice" target="_blank">{{ 'contact.privacy_policy_link_text' | translate }}</a>
+                                {{ 'contact.privacy_policy_end' | translate }}
+                              </p>
+                        </div>
+                        <div class="error_text">@if(!isChecked && contactForm.submitted) {
+                            <span>{{ 'contact.accept_policy' | translate }}</span>} 
+                        </div>
+                        <button type="submit" class="btn_contact pointer" [ngClass]="{'btn-enabled': isFormValid(contactForm), 'btn-disabled': !isFormValid(contactForm)}">
+                            @if(!isSmallScreen) {
+                                <span>{{ 'contact.send_button_large' | translate }}</span> 
+                            } @else {
+                                <span>{{ 'contact.send_button_small' | translate }}</span> 
+                            }
+                        </button>
+                    </div>
+                </form>    
+                <div class="dialog_message" [ngClass]="{'show_dialog_message': isDialogVisible}">
+                    <p>
+                        {{ 'contact.success_message_start' | translate }}
+                        <span>{{ 'contact.success_message_highlight' | translate }}</span>
+                        {{ 'contact.success_message_end' | translate }}
+                    </p>
+                </div>     
+        </div>
+    </div>
+</section>

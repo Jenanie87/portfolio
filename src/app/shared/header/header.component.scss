@@ -1,0 +1,95 @@
+@import "../../../styles.scss";
+
+header {
+  @include dFlex();
+  background-color: $background_light;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  > .header_content {
+    @include dFlex($jc: space-between);
+    max-width: 1440px;
+    width: 100%;
+    z-index: 3;
+    > .right_part {
+      @include dFlex($jc: unset, $g: 24px);
+      > img {
+        width: 40px;
+        height: 32px;
+      }
+      &.xsmall_screen {
+        gap: 10px;
+      }
+      &.xsmall_screen .translate_buttons {
+        gap: 0px;
+      }
+      &.xsmall_screen .translate_buttons .choice_btn {
+        padding: 6px 10px;
+      }
+    }
+  }
+}
+
+.overlay {
+  z-index: 1;
+  inset: 0;
+  background-color: transparent;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.burger_menu {
+  @include dFlex();
+  position: absolute;
+  padding-top: 94px;
+  width: 100%;
+  height: 969px;
+  background-color: $background_light;
+  z-index: 2;
+}
+
+.d_none {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (max-height: 968px) {
+  .burger_menu {
+    height: 100vh;
+  }
+}
+
+.translate_buttons {
+  display: flex;
+  background-color: black;
+  border-radius: 40px;
+  padding: 2px;
+  gap: 8px;
+  > .choice_btn {
+    @include dFlex($jc: unset, $g: 6px);
+    border-radius: 40px;
+    padding: 6px 16px;
+    cursor: pointer;
+    border: none;
+  }
+  > .active_btn {
+    background-color: $background_light;
+    color: $highlight;
+    font-weight: 700;
+  }
+  > .passive_btn {
+    background-color: black;
+    color: $background_light;
+    font-weight: 300;
+  }
+}
+
+.button_text {
+  font-family: "Overpass";
+  font-size: 16px;
+}

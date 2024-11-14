@@ -1,0 +1,103 @@
+@import "../../../styles.scss";
+
+footer {
+  @include dFlex();
+  background-color: $background_dark;
+  color: $background_light;
+  margin-top: -1px;
+  padding-bottom: 11px;
+
+  > .footer_content {
+    @include dFlex($jc: space-between);
+    max-width: 1440px;
+    width: 100%;
+  }
+}
+
+.left_part {
+  @include dFlex($ai: flex-start, $g: 13px);
+  flex-direction: column;
+  > a > img {
+    height: 30px;
+    filter: invert(89%) sepia(2%) saturate(1642%) hue-rotate(332deg)
+      brightness(112%) contrast(101%);
+  }
+  > p {
+    font-family: "Overpass";
+    font-size: 22px;
+    line-height: 26.4px;
+  }
+}
+
+.right_part {
+  @include dFlex($ai: flex-end, $g: 14px);
+  flex-direction: column;
+  .links {
+    @include dFlex($g: 42px);
+    > img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  > span {
+    padding: 5px 0px;
+    > a {
+      color: $background_light;
+      font-family: "Overpass";
+      transition: font-weight 100ms ease-in;
+      &:hover {
+        font-weight: 700;
+      }
+    }
+    > .horizontal_line {
+      width: 55.5px;
+      height: 2px;
+      background-color: $highlight;
+      opacity: 0;
+      transform: translateX(0%);
+      transition: transform 100ms ease-in;
+    }
+    &:hover .horizontal_line {
+      opacity: 1;
+      transform: translateX(280%);
+    }
+  }
+}
+
+.icon_bounce {
+  transition: all 100ms ease-out;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.footer_content_small {
+  @include dFlex($g: 28px);
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+  padding: 28px 0px;
+  .links {
+    @include dFlex($g: 42px);
+    > img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  > a {
+    color: $background_light;
+    font-family: "Overpass";
+    > img {
+      height: 30px;
+      filter: invert(89%) sepia(2%) saturate(1642%) hue-rotate(332deg)
+        brightness(112%) contrast(101%);
+    }
+  }
+  > p {
+    font-family: "Overpass";
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: -0.025em;
+  }
+}

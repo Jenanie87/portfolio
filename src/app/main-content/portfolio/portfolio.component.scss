@@ -1,0 +1,266 @@
+@import "../../../styles.scss";
+
+section {
+  padding-top: 20px;
+  background-color: $background_light;
+  @include dFlex();
+  > .portfolio_content {
+    @include dFlex();
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    > a > img {
+      width: 100%;
+    }
+  }
+}
+
+.portfolio {
+  @include dFlex($ai: space-between, $g: 48px);
+  flex-direction: column;
+  > .portfolio_headline {
+    text-align: center;
+    cursor: default;
+    &:hover {
+      color: $highlight;
+    }
+  }
+  > p {
+    font-family: "Overpass";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26.4px;
+    text-align: center;
+  }
+  > .projects {
+    @include dFlex($jc: space-between, $g: 100px);
+    height: 460px;
+    width: 100%;
+    overflow-x: hidden;
+    > .information {
+      @include dFlex($ai: unset);
+      flex: 1;
+      height: 100%;
+      flex-direction: column;
+      width: 100%;
+    }
+    &:hover .img_animation img {
+      filter: grayscale(0);
+    }
+    &:hover .border_animation {
+      z-index: 1;
+    }
+  }
+  > .reverseDir {
+    flex-direction: row-reverse;
+  }
+  &.small_screen p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &.small_screen .projects,
+  &.medium_screen .projects {
+    flex-direction: column;
+    height: auto;
+  }
+  &.xsmall_screen .projects {
+    gap: 20px;
+  }
+  &.small_screen,
+  &.medium_screen {
+    .projects {
+      .information {
+        &.align-end {
+          text-align: left;
+        }
+        &.align-start {
+          text-align: right;
+        }
+        .techstack {
+          &.align-end {
+            align-self: flex-start;
+          }
+          &.align-start {
+            align-self: flex-end;
+          }
+        }
+      }
+
+      .buttons_flexStart {
+        &.align-end {
+          justify-content: flex-start;
+        }
+        &.align-start {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+.img_animation {
+  height: 414px;
+  width: 640px;
+  position: relative;
+  > img {
+    filter: grayscale(1);
+  }
+  > .border_animation {
+    height: 394px;
+    width: 620px;
+    border: 4px solid #000000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 150ms linear;
+  }
+  > img {
+    height: 394px;
+    width: 620px;
+  }
+  > .arrow {
+    width: 48px;
+    height: 48px;
+    transform: rotate(135deg) scale(1);
+    top: 50%;
+    right: -22px;
+    z-index: 2;
+    position: absolute;
+    opacity: 1;
+  }
+  &.small_screen {
+    height: 210px;
+    width: 336px;
+  }
+  &.xsmall_screen {
+    height: 207px;
+    width: 315px;
+  }
+  &.small_screen .border_animation {
+    height: 200px;
+    width: 316px;
+    right: 7px;
+  }
+  &.small_screen .project_img {
+    height: 200px;
+    width: 316px;
+  }
+  &.small_screen .arrow {
+    height: 30px;
+    width: 30px;
+    right: -12px;
+  }
+}
+
+.borderPosition {
+  left: -40px;
+  &.small_screen {
+    left: -37px;
+  }
+}
+
+.arrowPosition {
+  left: -55px;
+  &.small_screen {
+    left: -45px;
+  }
+}
+
+.information {
+  @include dFlex();
+  > div {
+    .information_content {
+      opacity: 0;
+      @include dFlex($jc: unset, $ai: unset, $g: 15px);
+      flex-direction: column;
+      > .information_name {
+        font-family: "Syne";
+        font-size: 45px;
+        font-weight: 800;
+        line-height: 45px;
+      }
+      > .techstack {
+        > p {
+          display: flex;
+          font-family: "Overpass";
+          font-size: 23px;
+          line-height: 27.6px;
+          color: $highlight;
+        }
+      }
+      > .description_text {
+        font-family: "Overpass";
+        font-size: 16px;
+        line-height: 19.2px;
+      }
+      > .buttons {
+        @include dFlex($jc: flex-start, $g: 10px);
+        > button {
+          &.xsmall_screen {
+            width: 100%;
+            text-align: center;
+          }
+          > a {
+            color: black;
+          }
+        }
+        &.xsmall_screen {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+    }
+    @include dFlex($ai: unset);
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+  }
+  &.small_screen div .information_content .information_name {
+    font-size: 32px;
+    line-height: 38.4px;
+  }
+  &.small_screen div .information_content .techstack p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.medium_margin_adjust {
+  &.medium_screen,
+  &.small_screen {
+    margin-left: 37px;
+  }
+}
+
+.amount_project {
+  font-family: "Syne";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 57.6px;
+  &.xsmall_screen {
+    font-size: 23px;
+    line-height: 27.6px;
+  }
+}
+
+.project_img_xsmall {
+  height: 179px;
+  width: 295px;
+  align-self: center;
+  filter: grayscale(1);
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+
+@media screen and (max-width: 1410px) and (min-width: 1279.97px) {
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    > button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

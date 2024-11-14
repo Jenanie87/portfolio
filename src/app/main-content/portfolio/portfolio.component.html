@@ -1,0 +1,73 @@
+<section id="portfolio" class="pad-lr100" appResponsive>
+    <div class="portfolio_content">
+        <a (mouseover)="startImageRotation()" (click)="scrollToPortfolio($event)" href="#portfolio">
+            @if(isSmallScreen) {
+                <div class="wrapper_center">
+                    <img class="pointer" [src]="currentImage" alt="arrow right">
+                </div>
+            } @else {
+                <img class="pointer" [src]="currentImage" alt="arrow right">
+            }
+        </a>  
+        <div id="portfolio" class="portfolio" appResponsive>
+            <h2 class="portfolio_headline" appResponsive>Portfolio</h2>
+            <p [innerHTML]="'portfolio.description' | translate"></p>
+            @for (project of projects; track projects; let index = $index) {
+                <div (mouseover)="startAnimation(index)" (mouseleave)="resetAnimation()" [ngClass]="{'reverseDir' : index % 2 !== 0}" class="projects">
+                    @if(isMediumScreen || isSmallScreen || isXSmallScreen) {
+                        <h3 appResponsive class="amount_project" [ngStyle]="{'align-self': index % 2 !== 0 ? 'flex-start' : 'flex-end'}">0{{index + 1}}/0{{ projects.length }}</h3>
+                        @if(isXSmallScreen) {
+                            <img src="../../../../assets/img/projects/{{ project.image }}" class="project_img_xsmall" alt="preview image">
+                        } @else {
+                            <div class="img_animation" appResponsive [ngClass]="{'medium_margin_adjust' : (index % 2 !== 0) && !isXSmallScreen}" >
+                                <div appResponsive class="border_animation" [ngClass]="{'borderPosition' : index % 2 !== 0}" [@borderAnimation]="!isXSmallScreen && hoverIndex === index ? 'visible' : 'hidden'">
+                                </div>
+                                <img src="../../../../assets/img/projects/{{ project.image }}" class="project_img" alt="preview image">
+                                <img appResponsive class="arrow" src="../../../assets/icons/portfolio/round_arrow.svg" [ngClass]="{'arrowPosition' : index % 2 !== 0}" alt="" [@arrowAnimation]="!isXSmallScreen && hoverIndex === index ? 'visible' : 'hidden'" [@enlargeImg]="hoverIndex === index ? 'bigger' : 'normal'">
+                            </div>
+                        }
+                        <div class="information" appResponsive [ngClass]="{'align-end' : index % 2 === 0, 'align-start': index % 2 !== 0}">
+
+                            <div>
+                                <div [@informationAnimation]="{value: hoverIndex === index ? informationAnimationState : 'start', params: {direction: index % 2 === 0 ? '-100px' : '100px'}}" class="information_content">
+                                    <h3 class="information_name">{{ project.name }}</h3>
+                                    <div class="techstack" [ngClass]="{'align-end' : index % 2 === 0, 'align-start': index % 2 !== 0}">
+                                        <p>{{ combineArrayElements(project.techstack) }}</p>   
+                                    </div>
+                                    <p class="description_text">{{ ('portfolio.projects.' + project.name.toLowerCase() + '.description') | translate }}</p>
+                                    <div class="buttons buttons_flexStart" [ngClass]="{'align-end' : index % 2 === 0, 'align-start': index % 2 !== 0}" appResponsive>
+                                        <a href="{{ project.link }}" target="_blank"><button [@buttonAnimation]="buttonHoverIndex === index + '-github' ? currentState : 'start'" (mouseover)="toggleButtonAnimation('end', index, 'github')" (mouseout)="toggleButtonAnimation('start', index, 'github')" class="pointer btn" appResponsive>Github</button></a>
+                                        <a href="{{ project.preview }}" a target="_blank"><button [@buttonAnimation]="buttonHoverIndex === index + '-live' ? currentState : 'start'" (mouseover)="toggleButtonAnimation('end', index, 'live')" (mouseout)="toggleButtonAnimation('start', index, 'live')" class="pointer btn" appResponsive>{{ 'portfolio.project_button_preview' | translate }}</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    } @else {
+                        <div class="img_animation" appResponsive [ngClass]="{'medium_margin_adjust' : index % 2 !== 0}" >
+                            <div appResponsive class="border_animation" [ngClass]="{'borderPosition' : index % 2 !== 0}" [@borderAnimation]="hoverIndex === index ? 'visible' : 'hidden'">
+                            </div>
+                            <img src="../../../../assets/img/projects/{{ project.image }}" class="project_img" alt="preview image">
+                            <img appResponsive class="arrow" src="../../../assets/icons/portfolio/round_arrow.svg" [ngClass]="{'arrowPosition' : index % 2 !== 0}" alt="" [@arrowAnimation]="hoverIndex === index ? 'visible' : 'hidden'" [@enlargeImg]="hoverIndex === index ? 'bigger' : 'normal'">
+                        </div>
+                        <div class="information" appResponsive>
+                            <h3 appResponsive class="amount_project" [ngStyle]="{'align-self': index % 2 !== 0 ? 'flex-start' : 'flex-end'}">0{{index + 1}}/0{{ projects.length }}</h3>
+                            <div>
+                                <div [@informationAnimation]="{value: hoverIndex === index ? informationAnimationState : 'start', params: {direction: index % 2 === 0 ? '-100px' : '100px'}}" class="information_content">
+                                    <h3 class="information_name">{{ project.name }}</h3>
+                                    <div class="techstack">
+                                        <p>{{ combineArrayElements(project.techstack) }}</p>   
+                                    </div>
+                                    <p class="description_text">{{ ('portfolio.projects.' + project.name.toLowerCase() + '.description') | translate }}</p>
+                                    <div class="buttons buttons_flexStart" [ngClass]="{'align-end' : index % 2 === 0, 'align-start': index % 2 !== 0}">
+                                        <a href="{{ project.link }}" target="_blank"><button [@buttonAnimation]="buttonHoverIndex === index + '-github' ? currentState : 'start'" (mouseover)="toggleButtonAnimation('end', index, 'github')" (mouseout)="toggleButtonAnimation('start', index, 'github')" class="pointer btn" appResponsive>Github</button></a>
+                                        <a href="{{ project.preview }}" a target="_blank"><button [@buttonAnimation]="buttonHoverIndex === index + '-live' ? currentState : 'start'" (mouseover)="toggleButtonAnimation('end', index, 'live')" (mouseout)="toggleButtonAnimation('start', index, 'live')" class="pointer btn" appResponsive>{{ 'portfolio.project_button_preview' | translate }}</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            } 
+        </div>
+    </div>
+</section>

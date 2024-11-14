@@ -1,0 +1,48 @@
+
+    <nav [@navAnimation]="animationState" appResponsive>
+        <div class="border_wrapper" (mouseover)="isHovered[0] = true" (mouseleave)="isHovered[0] = false" appResponsive>
+            <div class="rectangle">
+            </div>
+            <div class="justify_wrapper">
+                <a href="#about_me" (click)="onMenuClick()">{{ 'burger_menu.about_me_link' | translate }}</a>
+                <div [@lineAnimation]="isHovered[0] ? 'hover' : 'normal'" class="horizontal_line"></div>
+            </div>
+
+        </div>
+        <div class="border_wrapper" (mouseover)="isHovered[1] = true" (mouseleave)="isHovered[1] = false" appResponsive>
+            <div class="rectangle">
+            </div>
+            <div class="justify_wrapper">
+                <a href="#skills" (click)="onMenuClick()">{{ 'burger_menu.skills_link' | translate }}</a>
+                <div [@lineAnimation]="isHovered[1] ? 'hover' : 'normal'" class="horizontal_line"></div>
+            </div>
+
+        </div>
+        <div class="border_wrapper" (mouseover)="isHovered[2] = true" (mouseleave)="isHovered[2] = false" appResponsive>
+            <div class="rectangle">
+            </div>
+            <div class="justify_wrapper">
+                <a href="#portfolio" (click)="onMenuClick()">Portfolio</a>
+                <div [@lineAnimation]="isHovered[2] ? 'hover' : 'normal'" class="horizontal_line"></div>
+            </div>
+
+        </div>
+    </nav>
+    <div [@backgroundAnimation]="backgroundState" class="lower_part pad-lr100" appResponsive>
+        <div [@bottomAnimation]="bottomState" class="content_wrapper">
+            <h2 class="landscapeHeight" appResponsive>{{ 'burger_menu.say_hi_heading' | translate }}</h2>
+            <div class="notes">
+                <div class="left_part">
+                    <p>hello&#64;jenniferdahm.com</p>
+                </div>
+                <div class="right_part">
+                    <div class="links" appResponsive>
+                        <a href="https://github.com/Jenanie87" class="icon_bounce" target="_blank"><img src="../../../assets/icons/4. Github button s3.svg" class="pointer" alt="github icon"></a>
+                        <a href="mailto:hello@jenniferdahm.com" class="icon_bounce" target="_blank"><img src="../../../assets/icons/mail.svg" class="pointer" alt="mail icon"></a>
+                        <a href="https://linkedin.com/in/jennifer-dahm-b0028a1b6/" class="icon_bounce" target="_blank"><img src="../../../assets/icons/linkedIn.svg" class="pointer" alt="linkedIn icon"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,35 @@
+<section id="skills" class="pad-lr100" appResponsive>
+    <div class="skills_content">
+        <a (mouseover)="startArrowRotation()" (click)="scrollToSkills($event)" href="#skills">
+            @if(isSmallScreen) {
+                <div class="wrapper_center">
+                    <img class="pointer" [src]="currentImage" alt="arrow left">
+                </div>
+            } @else {
+                <img class="pointer" [src]="currentImage" alt="arrow left">
+            }
+        </a>  
+        <div class="skills" appResponsive>
+            <h2 class="skills_headline" appResponsive>{{ 'skills.title' | translate }}</h2>
+            <div class="skills_container" appResponsive>
+                @for (skill of skills; track skill; let index = $index) {
+                    <div class="skill_wrapper" (mouseover)="startAnimation(index)" (mouseleave)="resetAnimation()">
+                        <img src="../../../assets/img/skills/{{skill.image}}" alt="{{skill.name}} icon" [@rotateImgAnimation]="hoverIndex === index ? 'last' : 'first'">
+                        <p>{{skill.name}}</p>
+                    </div> 
+                }
+            </div>
+            <div class="skill_learn" appResponsive>
+                <img src="../../../assets/img/skills/continued_learning.svg" alt="learn icon" appResponsive>
+                <p appResponsive>
+                    {{ 'skills.learn_text_prefix' | translate }}
+                    <span class="pointer">
+                      <a href="#contact">{{ 'skills.learn_contact' | translate }}</a>
+                      <div class="horizontal_line"></div>
+                    </span>
+                    {{ 'skills.learn_text_suffix' | translate }}
+                  </p>
+            </div>
+        </div>
+    </div>
+</section>
